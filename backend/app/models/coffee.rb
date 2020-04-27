@@ -1,3 +1,4 @@
 class Coffee < ApplicationRecord
-  belongs_to :roaster
+  has_many :roaster_coffees
+  has_many :roasters, through: :roaster_coffees
 end
