@@ -1,4 +1,4 @@
-class CoffeesController < ApplicationController
+class Api::V1::CoffeesController < ApplicationController
   before_action :set_coffee, only: [:show, :update, :destroy]
 
   # GET /coffees

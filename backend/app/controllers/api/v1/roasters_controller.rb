@@ -1,4 +1,4 @@
-class RoastersController < ApplicationController
+class Api::V1::RoastersController < ApplicationController
   before_action :set_roaster, only: [:show, :update, :destroy]
 
   # GET /roasters
