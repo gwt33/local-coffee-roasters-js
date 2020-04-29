@@ -18,7 +18,7 @@ class Api::V1::CoffeesController < ApplicationController
     @coffee = Coffee.new(coffee_params)
 
     if @coffee.save
-      render json: @coffee, status: :created, location: @coffee
+      render json: @coffee, status: :created
     else
       render json: @coffee.errors, status: :unprocessable_entity
     end

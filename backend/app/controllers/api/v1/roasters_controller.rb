@@ -5,7 +5,7 @@ class Api::V1::RoastersController < ApplicationController
   def index
     @roasters = Roaster.all
 
-    render json: @roasters
+    render json: @roasters, include: :coffees
   end
 
   # GET /roasters/1
@@ -18,7 +18,7 @@ class Api::V1::RoastersController < ApplicationController
     @roaster = Roaster.new(roaster_params)
 
     if @roaster.save
-      render json: @roaster, status: :created, location: @roaster
+      render json: @roaster, status: :created
     else
       render json: @roaster.errors, status: :unprocessable_entity
     end
