@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Roasters App</title>
+</head>
+<body>
+
+    <h1>Coffee Roasters App</h1>
+    <p>    
+         Track the coffee roasters you've had and their coffees that you've tried!
+    </p>
+
+    <div id="roasters-index">
+        <ul id="roasters-index-ul"></ul>
+    </div>
+
+    <div id="roasters-show">
+
+    </div>
+
+    <!-- Create Roaster Form -->
+
+    <h3>Create a new Roaster!</h3>
+    <div id="roasters-new">
+        <form id="new-roaster-form" action="" method="post">
+            <textarea id="new-roaster-name-input" type="textarea" placeholder="Name" rows="1" cols="35"></textarea> <br>
+            <textarea id="new-roaster-location-input" type="textarea" placeholder="Location" rows="1" cols="35"></textarea> <br>
+            <input type="submit" value="Create Roaster">
+        </form>
+    </div>
+    <br>
+
+    <!-- Create Coffee Form -->
+
+    <div>
+        <h3>Create a new Coffee!</h3>
+        <div id="coffees-new">
+            <form id="new-coffee-form" action="" method="post">
+                <select name="" id="select-roaster">
+                    <option selected>Select Roaster</option>
+                </select> <br><br>
+                <textarea id="new-coffee-name-input" type="textarea" placeholder="Name of Coffee" rows="1" cols="35"></textarea> <br>
+                <textarea id="new-coffee-notes-input" type="textarea" placeholder="Tasting Notes" rows="4" cols="35"></textarea> <br>
+                <input id="new-coffee-roast-input" type="text" placeholder="Roast"> <br>
+                <br>
+                <input id="submit-coffee" type="submit" value="Create Coffee"> <br>
+        </form>    
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="models/roaster.js"></script>
+    <script type="text/javascript" src="models/coffee.js"></script>
+    
+</body>
+</html>
