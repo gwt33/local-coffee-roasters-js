@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_161615) do
+ActiveRecord::Schema.define(version: 2020_04_30_012557) do
 
   create_table "coffees", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2020_04_27_161615) do
     t.index ["roaster_id"], name: "index_coffees_on_roaster_id"
   end
 
+  create_table "roaster_coffees", force: :cascade do |t|
+    t.integer "roaster_id", null: false
+    t.integer "coffee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coffee_id"], name: "index_roaster_coffees_on_coffee_id"
+    t.index ["roaster_id"], name: "index_roaster_coffees_on_roaster_id"
+  end
+
   create_table "roasters", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -30,4 +39,6 @@ ActiveRecord::Schema.define(version: 2020_04_27_161615) do
   end
 
   add_foreign_key "coffees", "roasters"
+  add_foreign_key "roaster_coffees", "coffees"
+  add_foreign_key "roaster_coffees", "roasters"
 end
