@@ -20,7 +20,7 @@ class Api::V1::CoffeesController < ApplicationController
     if @coffee.save
       render json: @coffee, status: :created
     else
-      render json: @coffee.errors, status: :unprocessable_entity
+      render json: {errors: @coffee.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

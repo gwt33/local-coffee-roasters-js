@@ -20,7 +20,7 @@ class Api::V1::RoastersController < ApplicationController
     if @roaster.save
       render json: @roaster, status: :created
     else
-      render json: @roaster.errors, status: :unprocessable_entity
+      render json: {errors: @roaster.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
