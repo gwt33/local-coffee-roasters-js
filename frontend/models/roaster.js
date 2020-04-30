@@ -5,9 +5,9 @@ class Roaster {
         this.id = roasterData.id;
         this.name = roasterData.name;
         this.location = roasterData.location;
+        this.coffees = roasterData.coffees.map(coffee => new Coffee(coffee));
         this.save()
     }
-
 
     save() {
         Roaster.all.push(this)
@@ -16,18 +16,18 @@ class Roaster {
     template() {
         const roasterVar = document.getElementById("roasters-index-ul")
 
-        const newRoaster = `
-
+        const newRoaster = 
+            (`
             <ul>
                 <li><strong>${this.name}</strong></li>
-                    Location: ${this.location} <br>
+                    Location: ${this.location} 
+                    <br><br>
+                    <ul>
+                    ${this.coffees.map(coffee => coffee.template()).join("")}
+                    </ul> <br>
                     <br>
-            </ul><br>`
-
+            </ul><br>
+            `)
         roasterVar.innerHTML += newRoaster
     }
 }
-
-                        // <ul>
-                        //     <li>Coffees: ${this.coffees}</li>
-                        // </ul>
